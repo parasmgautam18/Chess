@@ -18,7 +18,6 @@ The game follows the rules of chess, including castling, en passant, pawn promot
 - [How to Play](#how-to-play)
 - [Configuration](#configuration)
 - [Project Structure](#project-structure)
-- [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
 
 ---
