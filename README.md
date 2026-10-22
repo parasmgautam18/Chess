@@ -110,7 +110,7 @@ To put it in a normal Windows folder instead, first run, for example, `cd /c/Use
 **5. Build the game**
 
 ```bash
-g++ main.cpp -o chess.exe -O3 -std=c++17 -lraylib -lopengl32 -lgdi32 -lwinmm
+g++ chess.cpp -o chess.exe -O3 -std=c++17 -lraylib -lopengl32 -lgdi32 -lwinmm
 ```
 
 **6. Run the game**
@@ -122,7 +122,7 @@ g++ main.cpp -o chess.exe -O3 -std=c++17 -lraylib -lopengl32 -lgdi32 -lwinmm
 > **Tip:** If you want a standalone `chess.exe` that also runs when double-clicked outside the MSYS2 terminal (without needing `raylib.dll`), add `-static` to the build command:
 >
 > ```bash
-> g++ main.cpp -o chess.exe -O3 -std=c++17 -static -lraylib -lopengl32 -lgdi32 -lwinmm
+> g++ chess.cpp -o chess.exe -O3 -std=c++17 -static -lraylib -lopengl32 -lgdi32 -lwinmm
 > ```
 >
 > Keep the `assets/` folder next to the `.exe`.
@@ -167,7 +167,7 @@ Homebrew installs GCC under a versioned name such as `g++-15`. This command find
 GXX=$(ls "$(brew --prefix)"/bin/g++-* | sort -V | tail -n 1)
 RAYLIB=$(brew --prefix raylib)
 
-"$GXX" main.cpp -o chess -O3 -std=c++17 -I"$RAYLIB/include" -L"$RAYLIB/lib" -lraylib
+"$GXX" chess.cpp -o chess -O3 -std=c++17 -I"$RAYLIB/include" -L"$RAYLIB/lib" -lraylib
 ```
 
 #### Option B — Apple Clang (one small edit)
@@ -194,7 +194,7 @@ Then build:
 ```bash
 RAYLIB=$(brew --prefix raylib)
 
-clang++ main.cpp -o chess -O3 -std=c++17 -I"$RAYLIB/include" -L"$RAYLIB/lib" -lraylib
+clang++ chess.cpp -o chess -O3 -std=c++17 -I"$RAYLIB/include" -L"$RAYLIB/lib" -lraylib
 ```
 
 **5. Run the game**
@@ -243,7 +243,7 @@ cd YOUR_REPO
 **4. Build the game**
 
 ```bash
-g++ main.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+g++ chess.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 ```
 
 **5. Run the game**
@@ -260,7 +260,7 @@ sudo dnf install -y gcc-c++ git raylib-devel mesa-libGL-devel libX11-devel
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO
 
-g++ main.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+g++ chess.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 ./chess
 ```
 
@@ -274,7 +274,7 @@ sudo pacman -S --needed base-devel git raylib
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO
 
-g++ main.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+g++ chess.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 ./chess
 ```
 
@@ -284,9 +284,9 @@ g++ main.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
 | OS | Build command | Run command |
 |---|---|---|
-| **Windows** (MSYS2 UCRT64) | `g++ main.cpp -o chess.exe -O3 -std=c++17 -lraylib -lopengl32 -lgdi32 -lwinmm` | `./chess.exe` |
-| **macOS** (Homebrew GCC) | `"$GXX" main.cpp -o chess -O3 -std=c++17 -I"$RAYLIB/include" -L"$RAYLIB/lib" -lraylib` | `./chess` |
-| **Linux** | `g++ main.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11` | `./chess` |
+| **Windows** (MSYS2 UCRT64) | `g++ chess.cpp -o chess.exe -O3 -std=c++17 -lraylib -lopengl32 -lgdi32 -lwinmm` | `./chess.exe` |
+| **macOS** (Homebrew GCC) | `"$GXX" chess.cpp -o chess -O3 -std=c++17 -I"$RAYLIB/include" -L"$RAYLIB/lib" -lraylib` | `./chess` |
+| **Linux** | `g++ chess.cpp -o chess -O3 -std=c++17 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11` | `./chess` |
 
 > Always keep **`-O3`**. The engine searches 5 plies, and an unoptimized build can be many times slower.
 
