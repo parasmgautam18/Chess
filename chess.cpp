@@ -9,7 +9,7 @@ const int BOARD_SIZE = 8;
 const int TILE_SIZE = 100; // 800x800 window
 const int INF = 1000000;
 const int MATE_SCORE = 100000;
-const int SEARCH_DEPTH = 5; // 5 plies + Quiescence search (increase to 5 or 6 with -O3)
+const int SEARCH_DEPTH = 5;
 
 struct ChessGame {
     Bitboard whitePawns   = 0x00FF000000000000ULL;
